@@ -20,7 +20,10 @@ function divide(a, b) {
 }
 
 function verboseDescription() {
-  return 'This is a deliberately very long descriptive message designed to trip ESLint max-len rule at 100 chars.';
+  return (
+    'This is a deliberately very long descriptive message designed to ' +
+    'trip ESLint max-len rule at 100 chars.'
+  );
 }
 
 module.exports = { add, subtract, multiply, divide, verboseDescription };
