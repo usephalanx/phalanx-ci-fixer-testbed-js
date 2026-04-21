@@ -19,4 +19,8 @@ function divide(a, b) {
   return a / b;
 }
 
-module.exports = { add, subtract, multiply, divide };
+function verboseDescription() {
+  return 'This is a deliberately very long descriptive message designed to trip ESLint max-len rule at 100 chars.';
+}
+
+module.exports = { add, subtract, multiply, divide, verboseDescription };
