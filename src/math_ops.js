@@ -19,4 +19,18 @@ function divide(a, b) {
   return a / b;
 }
 
-module.exports = { add, subtract, multiply, divide };
+function percentage(part, whole) {
+  if (whole === 0) {
+    throw new Error('cannot compute percentage of zero');
+  }
+  return (part / whole) * 100;
+}
+
+function average(values) {
+  if (values.length === 0) {
+    throw new Error('cannot average an empty list');
+  }
+  return values.reduce((a, b) => a + b, 0) / values.length;
+}
+
+module.exports = { add, subtract, multiply, divide, percentage, average };
