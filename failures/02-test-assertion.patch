@@ -1,0 +1,12 @@
+--- a/src/math_ops.js
++++ b/src/math_ops.js
+@@ -10,7 +10,8 @@ function subtract(a, b) {
+ }
+
+ function multiply(a, b) {
+-  return a * b;
++  // BUG (intentional testbed failure): multiply is using add's operator.
++  return a + b;
+ }
+
+ function divide(a, b) {
