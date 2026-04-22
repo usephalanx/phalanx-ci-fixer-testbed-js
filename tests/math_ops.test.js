@@ -1,6 +1,6 @@
 'use strict';
 
-const { add, subtract, multiply, divide } = require('../src/math_ops');
+const { add, subtract, multiply, divide, percentage, average } = require('../src/math_ops');
 
 describe('add', () => {
   it('adds positive numbers', () => {
@@ -44,5 +44,29 @@ describe('divide', () => {
   });
   it('throws on zero denominator', () => {
     expect(() => divide(1, 0)).toThrow('cannot divide by zero');
+  });
+});
+
+describe('percentage', () => {
+  it('calculates percentage correctly', () => {
+    expect(percentage(50, 200)).toBe(25);
+  });
+  it('handles full amount', () => {
+    expect(percentage(3, 3)).toBe(100);
+  });
+  it('throws when whole is zero', () => {
+    expect(() => percentage(5, 0)).toThrow('cannot compute percentage of zero');
+  });
+});
+
+describe('average', () => {
+  it('averages a list of numbers', () => {
+    expect(average([1, 2, 3, 4, 5])).toBe(3);
+  });
+  it('averages a single-element array', () => {
+    expect(average([42])).toBe(42);
+  });
+  it('throws on empty array', () => {
+    expect(() => average([])).toThrow('cannot average an empty list');
   });
 });
