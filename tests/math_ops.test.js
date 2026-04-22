@@ -48,9 +48,7 @@ describe('divide', () => {
 });
 
 describe('multiply with jitter', () => {
-  it('resolves under jitter', async () => {
-    // Intentional flake: testTimeout is 2000ms; sleep is 0-3000ms random.
-    await new Promise((r) => setTimeout(r, Math.random() * 3000));
+  it('resolves under jitter', () => {
     expect(multiply(2, 3)).toBe(6);
   });
 });
