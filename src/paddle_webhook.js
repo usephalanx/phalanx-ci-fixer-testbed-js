@@ -13,9 +13,6 @@ function createProcessor() {
     if (event.type !== 'transaction.completed') {
       return { granted: false, reason: 'ignored' };
     }
-    if (processedEvents.has(event.id)) {
-      return { granted: false, reason: 'duplicate' };
-    }
     processedEvents.add(event.id);
 
     const workspaceId = event.data.workspaceId;
